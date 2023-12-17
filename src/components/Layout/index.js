@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Home from "../pages/Home";
+import Header from "../Header";
 
 export default function Layout() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -13,7 +14,7 @@ export default function Layout() {
 
   return (
     <div>
-      <div currentPage={currentPage} handlePageChange={handlePageChange} />
+      <Header currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
     </div>
   );
