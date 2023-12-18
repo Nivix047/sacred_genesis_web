@@ -1,5 +1,8 @@
 import React from "react";
+import "./Home.css";
 
-export default function home() {
-  return <div>Test</div>;
-}
+const Home = () => {
+  return <div className="home-background"></div>;
+};
+
+export default Home;

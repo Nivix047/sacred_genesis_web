@@ -1,0 +1,7 @@
+/* Background image for the home page */
+.home-background {
+  background-image: url("../../../assets/background1.png"); /* Adjust the path as needed */
+  height: 670px; /* Or any desired height */
+  background-size: cover;
+  background-position: center;
+}
