@@ -4,11 +4,21 @@
   height: 670px; /* Or any desired height */
   background-size: cover;
   background-position: center;
-  margin-bottom: 25px;
+  margin-bottom: 16px;
 }
 
 .right-content {
   display: flex;
   align-items: flex-start;
   gap: 25px;
+  color: white;
+}
+
+.content-section {
+  background-color: black;
+  color: white;
+}
+
+.home-background {
+  background-color: black;
 }

@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import "./Header.css";
 
 const Header = () => {
   const [value, setValue] = useState(0);
@@ -12,10 +13,10 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className="header-container">
       <Grid container spacing={2}>
         <Grid item xs={6} style={{ border: "1px solid black" }}>
-          <div>Left Side Content</div>
+          <div>SACRED GENESIS</div>
         </Grid>
         <Grid
           item
