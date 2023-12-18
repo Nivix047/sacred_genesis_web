@@ -5,7 +5,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div id="home-background-parent">
       <div className="home-background"></div>
       <div className="content-section">
         <Grid container alignItems="center" spacing={2}>

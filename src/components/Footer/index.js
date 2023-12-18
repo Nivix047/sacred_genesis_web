@@ -35,4 +35,35 @@ const Footer = () => {
   );
 };
 
+// import React from "react";
+// import { Box, Grid, Typography, Link } from "@mui/material";
+
+// const Footer = () => {
+//   return (
+//     <Box
+//       component="footer"
+//       sx={{ backgroundColor: "black", color: "white", padding: "20px 0" }}
+//     >
+//       <Grid container justifyContent="space-between" alignItems="center" px={3}>
+//         <Grid item>
+//           <Typography variant="body1">© 2023 Sacred Genesis LLC</Typography>
+//         </Grid>
+//         <Grid item>
+//           <Link
+//             href="/terms"
+//             color="inherit"
+//             underline="hover"
+//             sx={{ marginRight: 2 }}
+//           >
+//             Terms & Conditions
+//           </Link>
+//           <Link href="/privacy" color="inherit" underline="hover">
+//             Privacy Policy
+//           </Link>
+//         </Grid>
+//       </Grid>
+//     </Box>
+//   );
+// };
+
 export default Footer;

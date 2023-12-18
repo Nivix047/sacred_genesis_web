@@ -1,10 +1,10 @@
 /* Background image for the home page */
 .home-background {
   background-image: url("../../../assets/background1.png"); /* Adjust the path as needed */
-  height: 670px; /* Or any desired height */
+  height: 655px; /* Or any desired height */
   background-size: cover;
   background-position: center;
-  margin-bottom: 16px;
+  background-color: black;
 }
 
 .content-section {
@@ -19,12 +19,6 @@
 #welcome-message {
   padding-left: 3rem;
 }
-/* .right-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: white;
-} */
 
 .home-background {
   background-color: black;

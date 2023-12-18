@@ -1,47 +1,88 @@
 import React, { useState } from "react";
-import Grid from "@mui/material/Grid";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
-import "./Header.css";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  MenuItem,
+  Box,
+  Tabs,
+  Tab,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
   const [value, setValue] = useState(0);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <div className="header-container">
-      <Grid container spacing={2}>
-        <Grid item xs={6} style={{ border: "1px solid black" }}>
-          <h1 className="header-title">SACRED GENESIS</h1>
-        </Grid>
-        <Grid
-          item
-          xs={6}
-          style={{
-            border: "1px solid black",
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Box>
+    <AppBar position="static" sx={{ backgroundColor: "black", color: "white" }}>
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          SACRED GENESIS
+        </Typography>
+        {isMobile ? (
+          <>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={handleMenu}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              KeepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>PURCHASE RELICS</MenuItem>
+              <MenuItem onClick={handleClose}>GALLERY</MenuItem>
+              <MenuItem onClick={handleClose}>Item Three</MenuItem>
+            </Menu>
+          </>
+        ) : (
+          <Box sx={{ display: "flex" }}>
             <Tabs
               value={value}
               onChange={handleChange}
               aria-label="basic tabs example"
-              className="header-tabs"
             >
-              <Tab label="PURCHASE RELICS" />
-              <Tab label="GALLERY" />
-              <Tab label="Item Three" />
+              <Tab label="PURCHASE RELICS" style={{ color: "white" }} />
+              <Tab label="GALLERY" style={{ color: "white" }} />
+              <Tab label="Item Three" style={{ color: "white" }} />
             </Tabs>
           </Box>
-        </Grid>
-      </Grid>
-    </div>
+        )}
+      </Toolbar>
+    </AppBar>
   );
 };
 
