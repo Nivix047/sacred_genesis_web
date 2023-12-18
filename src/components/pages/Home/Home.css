@@ -4,4 +4,11 @@
   height: 670px; /* Or any desired height */
   background-size: cover;
   background-position: center;
+  margin-bottom: 25px;
+}
+
+.right-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
 }
