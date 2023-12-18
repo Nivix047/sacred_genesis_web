@@ -1,13 +1,17 @@
 /* Footer/Footer.css */
 .footer-container {
   padding: 20px;
+  background-color: black;
+  color: white;
+  border-top: 1px solid white;
+  box-sizing: border-box; /* Include padding and border in the width */
 }
 
 .footer-content {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 50px;
+  margin-right: 50px;
 }
 
 .footer-logo {
