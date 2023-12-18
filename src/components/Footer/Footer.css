@@ -4,14 +4,13 @@
   background-color: black;
   color: white;
   border-top: 1px solid white;
-  box-sizing: border-box; /* Include padding and border in the width */
+  box-sizing: border-box;
 }
 
 .footer-content {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 50px;
 }
 
 .footer-logo {

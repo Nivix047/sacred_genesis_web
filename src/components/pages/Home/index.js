@@ -1,41 +1,56 @@
+// src/components/pages/Home/index.js
 import React from "react";
 import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button"; // Import Button if you plan to use MUI buttons
+import Button from "@mui/material/Button";
 import "./Home.css";
 
 const Home = () => {
   return (
     <div>
-      <div className="home-background"></div>{" "}
-      {/* This is your background image */}
+      <div className="home-background"></div>
       <div className="content-section">
-        {" "}
-        {/* Add this wrapper div */}
-        <Grid container spacing={2}>
-          <Grid item xs={6} style={{ border: "1px solid black" }}>
-            <div className="left-content">
-              <p>
-                Relax, browse and collect Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui officia deserunt mollit anim id est laborum
-              </p>
-            </div>
+        <Grid container alignItems="center" spacing={2}>
+          <Grid item xs={12} md={6} className="left-content">
+            <h2>Relax, browse and collect</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum
+            </p>
           </Grid>
-          <Grid item xs={6} style={{ border: "1px solid black" }}>
-            <div className="right-content">
-              <Button variant="contained" color="primary">
-                Button 1
+          <Grid item xs={12} md={6} className="right-content">
+            <div className="button-group">
+              <Button
+                variant="contained"
+                color="primary"
+                className="styled-button"
+                id="purchase-relics-btn"
+                style={{ padding: "15px 30px" }}
+              >
+                PURCHASE RELICS
               </Button>
-              <Button variant="contained" color="primary">
-                Button 2
+              <Button
+                variant="contained"
+                color="primary"
+                className="styled-button"
+                id="gallery-btn"
+                style={{ padding: "15px 30px" }}
+              >
+                GALLERY
               </Button>
-              <Button variant="contained" color="primary">
-                Button 3
+              <Button
+                variant="contained"
+                color="primary"
+                className="styled-button"
+                id="analytics-btn"
+                style={{ padding: "15px 30px" }}
+              >
+                ANALYTICS <br />
+                (In developement)
               </Button>
             </div>
           </Grid>
