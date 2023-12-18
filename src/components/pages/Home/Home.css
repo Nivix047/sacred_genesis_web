@@ -7,17 +7,24 @@
   margin-bottom: 16px;
 }
 
+.content-section {
+  background-color: black;
+  color: white;
+}
+
+#welcome-message-title {
+  padding-left: 3rem;
+}
+
+#welcome-message {
+  padding-left: 3rem;
+}
 /* .right-content {
   display: flex;
   flex-direction: row;
   justify-content: center;
   color: white;
 } */
-
-.content-section {
-  background-color: black;
-  color: white;
-}
 
 .home-background {
   background-color: black;

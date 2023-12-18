@@ -3,6 +3,14 @@
   color: white;
 }
 
+/* .header-title {
+  padding-top: 10px;
+} */
+
 .MuiTab-root {
   color: white !important;
+}
+
+.header-tabs {
+  padding-top: 1.5rem;
 }

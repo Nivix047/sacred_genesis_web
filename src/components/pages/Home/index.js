@@ -1,4 +1,3 @@
-// src/components/pages/Home/index.js
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
@@ -10,9 +9,9 @@ const Home = () => {
       <div className="home-background"></div>
       <div className="content-section">
         <Grid container alignItems="center" spacing={2}>
-          <Grid item xs={12} md={6} className="left-content">
-            <h2>Relax, browse and collect</h2>
-            <p>
+          <Grid item xs={12} md={6} className="left-content" fontSize={25}>
+            <h1 id="welcome-message-title">Relax, browse and collect</h1>
+            <p id="welcome-message">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
