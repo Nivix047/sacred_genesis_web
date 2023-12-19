@@ -42,3 +42,15 @@
 #analytics-btn {
   background-color: blueviolet;
 }
+
+@media screen and (max-width: 600px) {
+  .button-group {
+    padding: 0 20px 20px; /* Add padding on smaller screens */
+  }
+
+  #purchase-relics-btn,
+  #gallery-btn,
+  #analytics-btn {
+    padding: 10px 20px; /* Adjust button padding on smaller screens */
+  }
+}

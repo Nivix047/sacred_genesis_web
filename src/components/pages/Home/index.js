@@ -21,7 +21,7 @@ const Home = () => {
               sunt in culpa qui officia deserunt mollit anim id est laborum
             </p>
           </Grid>
-          <Grid item xs={12} md={6} className="right-content">
+          <Grid item xs={12} sm={6} md={6} className="right-content">
             <div className="button-group">
               <Button
                 variant="contained"
