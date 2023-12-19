@@ -55,7 +55,7 @@ const Header = () => {
                 vertical: "top",
                 horizontal: "right",
               }}
-              KeepMounted
+              keepMounted
               transformOrigin={{
                 vertical: "top",
                 horizontal: "right",
@@ -75,8 +75,18 @@ const Header = () => {
               onChange={handleChange}
               aria-label="basic tabs example"
             >
-              <Tab label="PURCHASE RELICS" style={{ color: "white" }} />
-              <Tab label="GALLERY" style={{ color: "white" }} />
+              <Tab
+                component="a"
+                label="PURCHASE RELICS"
+                href="#right-content-section"
+                style={{ color: "white" }}
+              />
+              <Tab
+                component="a"
+                label="GALLERY"
+                href="#right-content-section"
+                style={{ color: "white" }}
+              />
               <Tab label="Item Three" style={{ color: "white" }} />
             </Tabs>
           </Box>

@@ -9,7 +9,7 @@ const Home = () => {
       <div className="home-background"></div>
       <div className="content-section">
         <Grid container alignItems="center" spacing={2}>
-          <Grid item xs={12} md={6} className="left-content" fontSize={25}>
+          <Grid item xs={12} md={6} fontSize={25}>
             <h1 id="welcome-message-title">Relax, browse and collect</h1>
             <p id="welcome-message">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -21,7 +21,7 @@ const Home = () => {
               sunt in culpa qui officia deserunt mollit anim id est laborum
             </p>
           </Grid>
-          <Grid item xs={12} sm={6} md={6} className="right-content">
+          <Grid item xs={12} sm={6} md={6} id="right-content-section">
             <div className="button-group">
               <Button
                 variant="contained"
