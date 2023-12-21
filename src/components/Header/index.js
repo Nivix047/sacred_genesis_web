@@ -84,6 +84,12 @@ const Header = () => {
               value={value}
               onChange={handleChange}
               aria-label="basic tabs example"
+              sx={{
+                ".MuiTab-root": {},
+                ".MuiTabs-indicator": {
+                  backgroundColor: "#7f6a93", // Indicator color
+                },
+              }}
             >
               <Tab
                 component={Link}
