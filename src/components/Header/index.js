@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
@@ -19,6 +20,7 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const navigate = useNavigate();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -28,8 +30,9 @@ const Header = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (path) => {
     setAnchorEl(null);
+    navigate(path); // Use React Router's navigate function to change the route
   };
 
   return (
@@ -61,11 +64,18 @@ const Header = () => {
                 horizontal: "right",
               }}
               open={Boolean(anchorEl)}
-              onClose={handleClose}
+              onClose={() => handleClose("")}
             >
-              <MenuItem onClick={handleClose}>PURCHASE RELICS</MenuItem>
-              <MenuItem onClick={handleClose}>GALLERY</MenuItem>
-              <MenuItem onClick={handleClose}>Item Three</MenuItem>
+              <MenuItem onClick={() => handleClose("/")}>HOME</MenuItem>
+              <MenuItem onClick={() => handleClose("/relics")}>
+                PURCHASE RELICS
+              </MenuItem>
+              <MenuItem onClick={() => handleClose("/gallery")}>
+                GALLERY
+              </MenuItem>
+              <MenuItem onClick={() => handleClose("/contact")}>
+                CONTACT
+              </MenuItem>
             </Menu>
           </>
         ) : (
@@ -76,18 +86,29 @@ const Header = () => {
               aria-label="basic tabs example"
             >
               <Tab
-                component="a"
-                label="PURCHASE RELICS"
-                href="#right-content-section"
+                component={Link}
+                to="/"
+                label="HOME"
                 style={{ color: "white" }}
               />
               <Tab
-                component="a"
-                label="GALLERY"
-                href="#right-content-section"
+                component={Link}
+                to="/relics"
+                label="PURCHASE RELICS"
                 style={{ color: "white" }}
               />
-              <Tab label="Item Three" style={{ color: "white" }} />
+              <Tab
+                component={Link}
+                to="/gallery"
+                label="GALLERY"
+                style={{ color: "white" }}
+              />
+              <Tab
+                component={Link}
+                to="/contact"
+                label="CONTACT"
+                style={{ color: "white" }}
+              />
             </Tabs>
           </Box>
         )}

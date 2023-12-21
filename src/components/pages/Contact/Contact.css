@@ -1,0 +1,45 @@
+.contact-container {
+  background-color: black;
+  color: white;
+  min-height: 16vh;
+  padding-top: 64px; /* Adjust as needed */
+  padding-bottom: 64px; /* Adjust as needed */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .MuiTextField-root {
+  margin-bottom: 16px;
+}
+
+.contact-form .MuiTextField-root input {
+  color: white;
+}
+
+.contact-form .MuiTextField-root label {
+  color: white;
+}
+
+.contact-form .MuiTextField-root .MuiFilledInput-root {
+  background-color: #424242; /* Adjust color as needed */
+  border-radius: 4px;
+  &:after {
+    border-bottom-color: #7f6a93; /* Change focus color here */
+  }
+}
+
+.contact-form .MuiFilledInput-root.Mui-focused {
+  background-color: #333333; /* Optionally, change the background color on focus */
+}
+
+.contact-form .MuiButton-root {
+  margin-top: 16px; /* Adjust as needed */
+  background-color: #424242; /* Adjust color as needed */
+}
+
+.contact-form .MuiButton-root:hover {
+  background-color: #373737; /* Adjust color as needed */
+}
