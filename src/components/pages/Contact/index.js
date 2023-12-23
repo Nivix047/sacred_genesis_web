@@ -27,6 +27,8 @@ const Contact = () => {
       ...prevState,
       [name]: value,
     }));
+
+    setSubmitSuccess(false);
   };
 
   const handleInputBlur = (event) => {
