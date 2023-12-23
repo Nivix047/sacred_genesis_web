@@ -8,6 +8,7 @@ import {
   Container,
 } from "@mui/material";
 import "./Contact.css";
+import { validateEmail } from "../../../utils/validateEmail";
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
@@ -15,18 +16,41 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+
+    // Update form values
     setFormValues((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+
+    // Validation logic
+    if (name === "email") {
+      if (!validateEmail(value)) {
+        setErrorMessage("Your email is invalid.");
+      } else {
+        setErrorMessage("");
+      }
+    } else {
+      if (!value.length) {
+        setErrorMessage(`${name} is required.`);
+      } else {
+        setErrorMessage("");
+      }
+    }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (errorMessage) {
+      console.log("Fix errors before submitting");
+      return;
+    }
     console.log(formValues);
+    // Add your form submission logic here
   };
 
   return (
@@ -90,6 +114,11 @@ const Contact = () => {
                 <Button variant="contained" type="submit">
                   Send
                 </Button>
+                {errorMessage && (
+                  <Typography color="error" style={{ marginTop: "10px" }}>
+                    {errorMessage}
+                  </Typography>
+                )}
               </Box>
             </Grid>
           </Grid>
