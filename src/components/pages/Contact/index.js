@@ -28,26 +28,24 @@ const Contact = () => {
       [name]: value,
     }));
 
-    setSubmitSuccess(false);
+    setErrorMessage(""); // Clear any error messages
+    setSubmitSuccess(false); // Clear the success message
   };
 
   const handleInputBlur = (event) => {
     const { name, value } = event.target;
 
     if (!value) {
-      // Set the error message based on the field name
-      if (name === "name") {
-        setErrorMessage("Name is required.");
-      } else if (name === "email") {
-        setErrorMessage("Email address is required.");
-      } else if (name === "message") {
-        setErrorMessage("Message is required.");
-      }
+      setErrorMessage(`${name} is required.`);
     } else if (name === "email" && !validateEmail(value)) {
       setErrorMessage("Your email is invalid.");
     } else {
       setErrorMessage("");
     }
+  };
+
+  const handleInputFocus = () => {
+    setSubmitSuccess(false); // Clear the success message
   };
 
   const handleSubmit = (event) => {
@@ -86,7 +84,7 @@ const Contact = () => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           setSubmitSuccess(true);
-          setFormValues({ name: "", email: "", message: "" });
+          setFormValues({ name: "", email: "", message: "" }); // Clear the form
         },
         (err) => {
           console.log("FAILED...", err);
@@ -125,6 +123,7 @@ const Contact = () => {
                 value={formValues.name}
                 onChange={handleInputChange}
                 onBlur={handleInputBlur}
+                onFocus={handleInputFocus}
                 variant="filled"
                 fullWidth
                 InputLabelProps={{ style: { color: "white" } }}
@@ -136,6 +135,7 @@ const Contact = () => {
                 value={formValues.email}
                 onChange={handleInputChange}
                 onBlur={handleInputBlur}
+                onFocus={handleInputFocus}
                 variant="filled"
                 fullWidth
                 type="email"
@@ -148,6 +148,7 @@ const Contact = () => {
                 value={formValues.message}
                 onChange={handleInputChange}
                 onBlur={handleInputBlur}
+                onFocus={handleInputFocus}
                 variant="filled"
                 multiline
                 rows={16}
