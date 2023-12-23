@@ -7,6 +7,7 @@ import {
   Box,
   Container,
 } from "@mui/material";
+import emailjs from "emailjs-com";
 import "./Contact.css";
 import { validateEmail } from "../../../utils/validateEmail";
 
@@ -17,6 +18,7 @@ const Contact = () => {
     message: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -49,8 +51,24 @@ const Contact = () => {
       console.log("Fix errors before submitting");
       return;
     }
-    console.log(formValues);
-    // Add your form submission logic here
+
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        formValues,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setSubmitSuccess(true);
+          // Reset form here if needed
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
   };
 
   return (
@@ -107,9 +125,10 @@ const Contact = () => {
                   onChange={handleInputChange}
                   variant="filled"
                   multiline
-                  rows={16} // You can adjust the row count
+                  rows={16}
                   fullWidth
                   InputLabelProps={{ style: { color: "white" } }}
+                  InputProps={{ style: { color: "white" } }}
                 />
                 <Button variant="contained" type="submit">
                   Send
@@ -117,6 +136,11 @@ const Contact = () => {
                 {errorMessage && (
                   <Typography color="error" style={{ marginTop: "10px" }}>
                     {errorMessage}
+                  </Typography>
+                )}
+                {submitSuccess && (
+                  <Typography color="white" style={{ marginTop: "10px" }}>
+                    Thank you for your message!
                   </Typography>
                 )}
               </Box>
