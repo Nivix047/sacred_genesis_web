@@ -23,35 +23,54 @@ const Contact = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
-    // Update form values
     setFormValues((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+  };
 
-    // Clear error message on input change
-    setErrorMessage("");
+  const handleInputBlur = (event) => {
+    const { name, value } = event.target;
 
-    // Additional validation for email
-    if (name === "email" && !validateEmail(value) && value.length > 0) {
+    if (!value) {
+      // Set the error message based on the field name
+      if (name === "name") {
+        setErrorMessage("Name is required.");
+      } else if (name === "email") {
+        setErrorMessage("Email address is required.");
+      } else if (name === "message") {
+        setErrorMessage("Message is required.");
+      }
+    } else if (name === "email" && !validateEmail(value)) {
       setErrorMessage("Your email is invalid.");
+    } else {
+      setErrorMessage("");
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const { name, email, message } = formValues;
 
-    if (!formValues.name || !formValues.email || !formValues.message) {
-      setErrorMessage("All fields are required.");
+    if (!name) {
+      setErrorMessage("Name is required.");
+      return;
+    } else if (!email) {
+      setErrorMessage("Email address is required.");
+      return;
+    } else if (!validateEmail(email)) {
+      setErrorMessage("Your email is invalid.");
+      return;
+    } else if (!message) {
+      setErrorMessage("Message is required.");
       return;
     }
 
     const emailData = {
-      from_name: formValues.name,
-      // to_name: "YourNameOrCompanyName", // Replace with your name or company's name
-      from_email: formValues.email,
-      message: formValues.message,
-      reply_to: formValues.email,
+      from_name: name,
+      from_email: email,
+      message: message,
+      reply_to: email,
     };
 
     emailjs
@@ -65,7 +84,7 @@ const Contact = () => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           setSubmitSuccess(true);
-          // Reset form here if needed
+          setFormValues({ name: "", email: "", message: "" });
         },
         (err) => {
           console.log("FAILED...", err);
@@ -74,83 +93,84 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <Box className="contact-container">
-        <Container maxWidth="lg">
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
-              <Typography
-                variant="h1"
-                gutterBottom
-                sx={{ textDecoration: "underline" }}
-              >
-                Got Questions?
-              </Typography>
-              <Typography variant="h2">
-                We've got tokens of wisdom. Ask away!
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                component="form"
-                noValidate
-                autoComplete="off"
-                onSubmit={handleSubmit}
-                className="contact-form"
-              >
-                <TextField
-                  required
-                  label="Name"
-                  name="name"
-                  value={formValues.name}
-                  onChange={handleInputChange}
-                  variant="filled"
-                  fullWidth
-                  InputLabelProps={{ style: { color: "white" } }}
-                />
-                <TextField
-                  required
-                  label="Email address"
-                  name="email"
-                  value={formValues.email}
-                  onChange={handleInputChange}
-                  variant="filled"
-                  fullWidth
-                  type="email"
-                  InputLabelProps={{ style: { color: "white" } }}
-                />
-                <TextField
-                  required
-                  label="Message"
-                  name="message"
-                  value={formValues.message}
-                  onChange={handleInputChange}
-                  variant="filled"
-                  multiline
-                  rows={16}
-                  fullWidth
-                  InputLabelProps={{ style: { color: "white" } }}
-                  InputProps={{ style: { color: "white" } }}
-                />
-                <Button variant="contained" type="submit">
-                  Send
-                </Button>
-                {errorMessage && (
-                  <Typography color="error" style={{ marginTop: "10px" }}>
-                    {errorMessage}
-                  </Typography>
-                )}
-                {submitSuccess && (
-                  <Typography color="white" style={{ marginTop: "10px" }}>
-                    Thank you for your message!
-                  </Typography>
-                )}
-              </Box>
-            </Grid>
+    <Box className="contact-container">
+      <Container maxWidth="lg">
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <Typography
+              variant="h1"
+              gutterBottom
+              sx={{ textDecoration: "underline" }}
+            >
+              Got Questions?
+            </Typography>
+            <Typography variant="h2">
+              We've got tokens of wisdom. Ask away!
+            </Typography>
           </Grid>
-        </Container>
-      </Box>
-    </div>
+          <Grid item xs={12} md={6}>
+            <Box
+              component="form"
+              noValidate
+              autoComplete="off"
+              onSubmit={handleSubmit}
+              className="contact-form"
+            >
+              <TextField
+                required
+                label="Name"
+                name="name"
+                value={formValues.name}
+                onChange={handleInputChange}
+                onBlur={handleInputBlur}
+                variant="filled"
+                fullWidth
+                InputLabelProps={{ style: { color: "white" } }}
+              />
+              <TextField
+                required
+                label="Email address"
+                name="email"
+                value={formValues.email}
+                onChange={handleInputChange}
+                onBlur={handleInputBlur}
+                variant="filled"
+                fullWidth
+                type="email"
+                InputLabelProps={{ style: { color: "white" } }}
+              />
+              <TextField
+                required
+                label="Message"
+                name="message"
+                value={formValues.message}
+                onChange={handleInputChange}
+                onBlur={handleInputBlur}
+                variant="filled"
+                multiline
+                rows={16}
+                fullWidth
+                InputLabelProps={{ style: { color: "white" } }}
+                InputProps={{ style: { color: "white" } }}
+              />
+              <Button variant="contained" type="submit">
+                Send
+              </Button>
+              {errorMessage && (
+                <Typography color="error" style={{ marginTop: "10px" }}>
+                  {errorMessage}
+                </Typography>
+              )}
+              {submitSuccess && (
+                <Typography color="white" style={{ marginTop: "10px" }}>
+                  Thank you for your message!
+                </Typography>
+              )}
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 
