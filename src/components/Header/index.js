@@ -14,6 +14,7 @@ import {
   Tab,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Header = () => {
   const [value, setValue] = useState(0);
@@ -76,6 +77,22 @@ const Header = () => {
               <MenuItem onClick={() => handleClose("/contact")}>
                 CONTACT
               </MenuItem>
+              <MenuItem>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoration: "none",
+                    color: "inherit",
+                  }}
+                >
+                  <TwitterIcon style={{ marginRight: "10px" }} />
+                  TWITTER
+                </a>
+              </MenuItem>
             </Menu>
           </>
         ) : (
@@ -113,6 +130,19 @@ const Header = () => {
                 component={Link}
                 to="/contact"
                 label="CONTACT"
+                style={{ color: "white" }}
+              />
+              <Tab
+                icon={
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "white", "&:visited": { color: "white" } }} // Add this line
+                  >
+                    <TwitterIcon />
+                  </a>
+                }
                 style={{ color: "white" }}
               />
             </Tabs>
