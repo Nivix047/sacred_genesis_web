@@ -29,34 +29,36 @@ const Contact = () => {
       [name]: value,
     }));
 
-    // Validation logic
-    if (name === "email") {
-      if (!validateEmail(value)) {
-        setErrorMessage("Your email is invalid.");
-      } else {
-        setErrorMessage("");
-      }
-    } else {
-      if (!value.length) {
-        setErrorMessage(`${name} is required.`);
-      } else {
-        setErrorMessage("");
-      }
+    // Clear error message on input change
+    setErrorMessage("");
+
+    // Additional validation for email
+    if (name === "email" && !validateEmail(value) && value.length > 0) {
+      setErrorMessage("Your email is invalid.");
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (errorMessage) {
-      console.log("Fix errors before submitting");
+
+    if (!formValues.name || !formValues.email || !formValues.message) {
+      setErrorMessage("All fields are required.");
       return;
     }
+
+    const emailData = {
+      from_name: formValues.name,
+      // to_name: "YourNameOrCompanyName", // Replace with your name or company's name
+      from_email: formValues.email,
+      message: formValues.message,
+      reply_to: formValues.email,
+    };
 
     emailjs
       .send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        formValues,
+        emailData,
         process.env.REACT_APP_EMAILJS_USER_ID
       )
       .then(
