@@ -16,7 +16,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-const Header = () => {
+const Navbar = () => {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const theme = useTheme();
@@ -153,4 +153,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
