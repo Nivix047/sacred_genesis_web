@@ -30,7 +30,7 @@ const Home = () => {
                 id="purchase-relics-btn"
                 style={{ padding: "15px 30px" }}
               >
-                PURCHASE RELICS
+                PURCHASE NFTS
               </Button>
               <Button
                 variant="contained"
@@ -46,10 +46,9 @@ const Home = () => {
                 color="primary"
                 className="styled-button"
                 id="analytics-btn"
-                style={{ padding: "15px 30px" }}
+                style={{ padding: "30px 30px" }}
               >
-                ANALYTICS <br />
-                (In developement)
+                CONTACT ME
               </Button>
             </div>
           </Grid>

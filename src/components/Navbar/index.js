@@ -69,7 +69,7 @@ const Navbar = () => {
             >
               <MenuItem onClick={() => handleClose("/")}>HOME</MenuItem>
               <MenuItem onClick={() => handleClose("/relics")}>
-                PURCHASE RELICS
+                PURCHASE NFTs
               </MenuItem>
               <MenuItem onClick={() => handleClose("/gallery")}>
                 GALLERY
@@ -117,7 +117,7 @@ const Navbar = () => {
               <Tab
                 component={Link}
                 to="/relics"
-                label="PURCHASE RELICS"
+                label="PURCHASE NFTs"
                 style={{ color: "white" }}
               />
               <Tab

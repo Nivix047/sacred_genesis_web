@@ -1,9 +1,15 @@
 /* Background image for the home page */
 .home-background {
   background-image: url("../../../assets/background1.png"); /* Adjust the path as needed */
-  height: 655px; /* Or any desired height */
+  height: 82vh; /* Or any desired height */
   background-size: cover;
   background-position: center;
+  background-color: black;
+  margin-left: 8vh;
+  margin-right: 8vh;
+}
+
+#home-background-parent {
   background-color: black;
 }
 
@@ -13,13 +19,13 @@
 }
 
 #welcome-message-title {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 8vh;
+  padding-right: 8vh;
 }
 
 #welcome-message {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 8vh;
+  padding-right: 8vh;
 }
 
 .home-background {
