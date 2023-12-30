@@ -40,15 +40,15 @@
 }
 
 #purchase-relics-btn {
-  background-color: #7f6a93;
+  background-color: #5f5f5f;
 }
 
 #gallery-btn {
-  background-color: #7f6a93;
+  background-color: #5f5f5f;
 }
 
 #analytics-btn {
-  background-color: #7f6a93;
+  background-color: #5f5f5f;
 }
 
 @media screen and (max-width: 600px) {
@@ -60,5 +60,19 @@
   #gallery-btn,
   #analytics-btn {
     padding: 10px 20px; /* Adjust button padding on smaller screens */
+  }
+}
+
+.styled-button {
+  width: 200px; /* Set a fixed width */
+  padding: 15px 30px; /* Adjust padding if needed */
+  /* Other styles */
+}
+
+/* Optional: Adjustments for smaller screens */
+@media screen and (max-width: 600px) {
+  .styled-button {
+    width: 150px; /* Smaller width for mobile screens */
+    padding: 10px 20px; /* Adjust padding for smaller screens */
   }
 }
