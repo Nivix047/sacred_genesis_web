@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: "black", color: "white" }}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
           SACRED GENESIS
         </Typography>
         {isMobile ? (
