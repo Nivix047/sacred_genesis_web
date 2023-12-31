@@ -64,15 +64,5 @@
 }
 
 .styled-button {
-  width: 200px; /* Set a fixed width */
-  padding: 15px 30px; /* Adjust padding if needed */
-  /* Other styles */
-}
-
-/* Optional: Adjustments for smaller screens */
-@media screen and (max-width: 600px) {
-  .styled-button {
-    width: 150px; /* Smaller width for mobile screens */
-    padding: 10px 20px; /* Adjust padding for smaller screens */
-  }
+  width: 200px;
 }

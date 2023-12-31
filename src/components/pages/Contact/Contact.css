@@ -27,7 +27,7 @@
   background-color: #424242; /* Adjust color as needed */
   border-radius: 4px;
   &:after {
-    border-bottom-color: #7f6a93; /* Change focus color here */
+    border-bottom-color: white; /* Change focus color here */
   }
 }
 

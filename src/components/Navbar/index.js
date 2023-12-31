@@ -104,7 +104,7 @@ const Navbar = () => {
               sx={{
                 ".MuiTab-root": {},
                 ".MuiTabs-indicator": {
-                  backgroundColor: "#7f6a93", // Indicator color
+                  backgroundColor: "white", // Indicator color
                 },
               }}
             >

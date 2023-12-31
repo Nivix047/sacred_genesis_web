@@ -29,6 +29,15 @@ const Home = () => {
                 className="styled-button"
                 id="purchase-relics-btn"
                 style={{ padding: "15px 30px" }}
+                sx={{
+                  padding: "15px 30px",
+                  borderColor: "rgba(173, 216, 230, 0.4)",
+                  borderWidth: "2px",
+                  borderStyle: "solid",
+                  ":hover": {
+                    borderColor: "white",
+                  },
+                }}
               >
                 PURCHASE NFTS
               </Button>
@@ -38,6 +47,15 @@ const Home = () => {
                 className="styled-button"
                 id="gallery-btn"
                 style={{ padding: "15px 30px" }}
+                sx={{
+                  padding: "15px 30px",
+                  borderColor: "rgba(173, 216, 230, 0.4)",
+                  borderWidth: "2px",
+                  borderStyle: "solid",
+                  ":hover": {
+                    borderColor: "white",
+                  },
+                }}
               >
                 GALLERY
               </Button>
@@ -47,6 +65,15 @@ const Home = () => {
                 className="styled-button"
                 id="analytics-btn"
                 style={{ padding: "30px 30px" }}
+                sx={{
+                  padding: "15px 30px",
+                  borderColor: "rgba(173, 216, 230, 0.4)",
+                  borderWidth: "2px",
+                  borderStyle: "solid",
+                  ":hover": {
+                    borderColor: "white",
+                  },
+                }}
               >
                 CONTACT ME
               </Button>
