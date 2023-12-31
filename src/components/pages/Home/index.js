@@ -52,9 +52,10 @@ const Home = () => {
                   className="styled-button"
                   id="purchase-nft-btn"
                   sx={{
-                    background: "linear-gradient(180deg, #5f5f5f, #2f2f2f)",
+                    background: "linear-gradient(180deg, #4a4a4a, #000000)",
                     padding: "15px 30px",
-                    borderColor: "lightblue",
+                    width: 200,
+                    borderColor: "white",
                     borderWidth: "1px",
                     borderStyle: "solid",
                     backgroundColor: "#5f5f5f", // Normal state background
@@ -70,10 +71,10 @@ const Home = () => {
                   variant="contained"
                   color="primary"
                   sx={{
-                    background: "linear-gradient(180deg, #5f5f5f, #2f2f2f)",
+                    background: "linear-gradient(180deg, #4a4a4a, #000000)",
                     width: 200,
                     padding: "15px 30px",
-                    borderColor: "lightblue",
+                    borderColor: "white",
                     borderWidth: "1px",
                     borderStyle: "solid",
                     backgroundColor: "#5f5f5f", // Normal state background
@@ -89,10 +90,10 @@ const Home = () => {
                   variant="contained"
                   color="primary"
                   sx={{
-                    background: "linear-gradient(180deg, #5f5f5f, #2f2f2f)",
+                    background: "linear-gradient(180deg, #4a4a4a, #000000)",
                     width: 200,
                     padding: "15px 30px",
-                    borderColor: "lightblue",
+                    borderColor: "white",
                     borderWidth: "1px",
                     borderStyle: "solid",
                     backgroundColor: "#5f5f5f", // Normal state background
