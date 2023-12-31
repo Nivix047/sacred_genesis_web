@@ -17,31 +17,43 @@ import MenuIcon from "@mui/icons-material/Menu";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Navbar = () => {
+  // State hooks for tab value and anchor element for menu
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
+
+  // Material-UI theme and media query for responsive design
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  // Navigation hook from react-router-dom
   const navigate = useNavigate();
 
+  // Handler for changing tabs
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  // Handler for opening the menu
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
+  // Handler for closing the menu and navigating
   const handleClose = (path) => {
     setAnchorEl(null);
-    navigate(path); // Use React Router's navigate function to change the route
+    navigate(path);
   };
 
   return (
+    // AppBar component for the top navigation bar
     <AppBar position="static" sx={{ backgroundColor: "black", color: "white" }}>
       <Toolbar>
+        {/* Site title */}
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
           SACRED GENESIS
         </Typography>
+
+        {/* Mobile view with hamburger menu */}
         {isMobile ? (
           <>
             <IconButton
@@ -67,6 +79,7 @@ const Navbar = () => {
               open={Boolean(anchorEl)}
               onClose={() => handleClose("")}
             >
+              {/* Menu items */}
               <MenuItem onClick={() => handleClose("/")}>HOME</MenuItem>
               <MenuItem onClick={() => handleClose("/purchase-nft")}>
                 PURCHASE NFTs
@@ -78,6 +91,7 @@ const Navbar = () => {
                 CONTACT
               </MenuItem>
               <MenuItem>
+                {/* Twitter link */}
                 <a
                   href="https://twitter.com"
                   target="_blank"
@@ -96,6 +110,7 @@ const Navbar = () => {
             </Menu>
           </>
         ) : (
+          // Desktop view with tabs
           <Box sx={{ display: "flex" }}>
             <Tabs
               value={value}
@@ -104,10 +119,11 @@ const Navbar = () => {
               sx={{
                 ".MuiTab-root": {},
                 ".MuiTabs-indicator": {
-                  backgroundColor: "white", // Indicator color
+                  backgroundColor: "white",
                 },
               }}
             >
+              {/* Tab items */}
               <Tab
                 component={Link}
                 to="/"
@@ -138,7 +154,7 @@ const Navbar = () => {
                     href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: "white", "&:visited": { color: "white" } }} // Add this line
+                    style={{ color: "white" }}
                   >
                     <TwitterIcon />
                   </a>
