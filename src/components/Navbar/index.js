@@ -115,14 +115,14 @@ const Navbar = () => {
                 style={{ color: "white" }}
               />
               <Tab
-                component={Link}
-                to="/relics"
+                component="a"
+                href="#purchase-nft-btn"
                 label="PURCHASE NFTs"
                 style={{ color: "white" }}
               />
               <Tab
-                component={Link}
-                to="/gallery"
+                component="a"
+                href="#purchase-nft-btn"
                 label="GALLERY"
                 style={{ color: "white" }}
               />

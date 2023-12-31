@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Button, Box, Typography, Container } from "@mui/material";
 import "./Home.css";
-import { redirectDocument } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -51,7 +50,7 @@ const Home = () => {
                   variant="contained"
                   color="primary"
                   className="styled-button"
-                  id="purchase-relics-btn"
+                  id="purchase-nft-btn"
                   sx={{
                     background: "linear-gradient(180deg, #5f5f5f, #2f2f2f)",
                     padding: "15px 30px",
