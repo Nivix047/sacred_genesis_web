@@ -1,7 +1,7 @@
 /* Background image for the home page */
 .home-background {
-  background-image: url("../../../assets/background1.png"); /* Adjust the path as needed */
-  height: 82vh; /* Or any desired height */
+  background-image: url("../../../assets/background1.png");
+  height: 82vh;
   background-size: cover;
   background-position: center;
   background-color: black;
@@ -36,33 +36,35 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: -20px; /* Adjust this value to align with the text */
+  margin-top: -20px;
 }
 
-#purchase-relics-btn {
-  background-color: #5f5f5f;
-}
-
-#gallery-btn {
-  background-color: #5f5f5f;
-}
-
+#purchase-relics-btn,
+#gallery-btn,
 #analytics-btn {
   background-color: #5f5f5f;
 }
 
+.styled-button {
+  width: 200px;
+}
+
 @media screen and (max-width: 600px) {
   .button-group {
-    padding: 0 20px 20px; /* Add padding on smaller screens */
+    padding: 0 20px 20px;
   }
 
   #purchase-relics-btn,
   #gallery-btn,
   #analytics-btn {
-    padding: 10px 20px; /* Adjust button padding on smaller screens */
+    padding: 10px 20px;
   }
 }
 
-.styled-button {
-  width: 200px;
+/* Responsive adjustments specifically for iPad Air */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #right-content-section {
+    padding-left: 2vh;
+    padding-right: 5vh;
+  }
 }
