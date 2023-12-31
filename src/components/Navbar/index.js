@@ -68,7 +68,7 @@ const Navbar = () => {
               onClose={() => handleClose("")}
             >
               <MenuItem onClick={() => handleClose("/")}>HOME</MenuItem>
-              <MenuItem onClick={() => handleClose("/relics")}>
+              <MenuItem onClick={() => handleClose("/purchase-nft")}>
                 PURCHASE NFTs
               </MenuItem>
               <MenuItem onClick={() => handleClose("/gallery")}>
