@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Button, Box, Typography, Container } from "@mui/material";
 import "./Home.css";
+import { redirectDocument } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -49,21 +50,58 @@ const Home = () => {
                 <Button
                   variant="contained"
                   color="primary"
-                  sx={{ width: 200, bgcolor: "#5f5f5f" }}
+                  className="styled-button"
+                  id="purchase-relics-btn"
+                  sx={{
+                    background: "linear-gradient(180deg, #5f5f5f, #2f2f2f)",
+                    padding: "15px 30px",
+                    borderColor: "lightblue",
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    backgroundColor: "#5f5f5f", // Normal state background
+                    ":hover": {
+                      background: "linear-gradient(180deg, #5f5f5f, #0a0a0a)", // Darker gradient on hover
+                      borderColor: "white", // Keep the border color for the hover state if you want
+                    },
+                  }}
                 >
                   PURCHASE NFTS
                 </Button>
                 <Button
                   variant="contained"
                   color="primary"
-                  sx={{ width: 200, bgcolor: "#5f5f5f" }}
+                  sx={{
+                    background: "linear-gradient(180deg, #5f5f5f, #2f2f2f)",
+                    width: 200,
+                    padding: "15px 30px",
+                    borderColor: "lightblue",
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    backgroundColor: "#5f5f5f", // Normal state background
+                    ":hover": {
+                      background: "linear-gradient(180deg, #5f5f5f, #0a0a0a)", // Darker gradient on hover
+                      borderColor: "white", // Keep the border color for the hover state if you want
+                    },
+                  }}
                 >
                   GALLERY
                 </Button>
                 <Button
                   variant="contained"
                   color="primary"
-                  sx={{ width: 200, bgcolor: "#5f5f5f" }}
+                  sx={{
+                    background: "linear-gradient(180deg, #5f5f5f, #2f2f2f)",
+                    width: 200,
+                    padding: "15px 30px",
+                    borderColor: "lightblue",
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    backgroundColor: "#5f5f5f", // Normal state background
+                    ":hover": {
+                      background: "linear-gradient(180deg, #5f5f5f, #0a0a0a)", // Darker gradient on hover
+                      borderColor: "white", // Keep the border color for the hover state if you want
+                    },
+                  }}
                 >
                   CONTACT ME
                 </Button>
