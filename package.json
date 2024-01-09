@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://sacred-genesis.com",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.1",
@@ -17,8 +18,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,5 +48,8 @@
   },
   "engines": {
     "node": "16.14.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
