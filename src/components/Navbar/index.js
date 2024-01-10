@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
@@ -17,21 +17,35 @@ import MenuIcon from "@mui/icons-material/Menu";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Navbar = () => {
-  // State hooks for tab value and anchor element for menu
+  // State for managing the menu anchor and tab value
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
 
-  // Material-UI theme and media query for responsive design
+  // Theme and media query for responsive design
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  // Navigation hook from react-router-dom
+  // Hooks for navigation and location
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // Handler for changing tabs
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  // External URL for the 'PURCHASE NFTs' link
+  const openseaUrl = "https://opensea.io/Sacred-Genesis";
+
+  // Update the tab value based on the current route
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setValue(0);
+        break;
+      case "/contact":
+        setValue(2);
+        break;
+      // Add more cases if you have more routes
+      default:
+        setValue(false);
+    }
+  }, [location.pathname]);
 
   // Handler for opening the menu
   const handleMenu = (event) => {
@@ -41,13 +55,10 @@ const Navbar = () => {
   // Handler for closing the menu and navigating
   const handleClose = (path) => {
     setAnchorEl(null);
-    navigate(path);
+    if (path) navigate(path);
   };
 
-  const openseaUrl = "https://opensea.io/Sacred-Genesis";
-
   return (
-    // AppBar component for the top navigation bar
     <AppBar position="static" sx={{ backgroundColor: "black", color: "white" }}>
       <Toolbar>
         {/* Site title */}
@@ -55,7 +66,7 @@ const Navbar = () => {
           SACRED GENESIS
         </Typography>
 
-        {/* Mobile view with hamburger menu */}
+        {/* Conditional rendering for Mobile and Desktop views */}
         {isMobile ? (
           <>
             <IconButton
@@ -79,9 +90,9 @@ const Navbar = () => {
                 horizontal: "right",
               }}
               open={Boolean(anchorEl)}
-              onClose={() => handleClose("")}
+              onClose={() => handleClose(null)}
             >
-              {/* Menu items */}
+              {/* Menu items for mobile view */}
               <MenuItem onClick={() => handleClose("/")}>HOME</MenuItem>
               <MenuItem onClick={() => handleClose()}>
                 <a
@@ -97,7 +108,6 @@ const Navbar = () => {
                 CONTACT
               </MenuItem>
               <MenuItem>
-                {/* Twitter link */}
                 <a
                   href="https://twitter.com"
                   target="_blank"
@@ -120,7 +130,6 @@ const Navbar = () => {
           <Box sx={{ display: "flex" }}>
             <Tabs
               value={value}
-              onChange={handleChange}
               aria-label="basic tabs example"
               sx={{
                 ".MuiTab-root": {},
@@ -129,7 +138,6 @@ const Navbar = () => {
                 },
               }}
             >
-              {/* Tab items */}
               <Tab
                 component={Link}
                 to="/"
