@@ -23,13 +23,13 @@ const Home = () => {
                 <Typography
                   variant="h4"
                   gutterBottom
-                  sx={{ mt: 2, px: { xs: 2, sm: 8 }, color: "white" }}
+                  sx={{ mt: 2, px: { xs: 2, sm: 2 }, color: "white" }}
                 >
                   Relax, browse and collect
                 </Typography>
                 <Typography
                   variant="body1"
-                  sx={{ px: { xs: 2, sm: 8 }, color: "white" }}
+                  sx={{ px: { xs: 2, sm: 2 }, color: "white" }}
                 >
                   Dear fellow travelers on the pixelated pilgrimage, welcome to
                   Sacred Genesis. Here, we offer not just NFTs, but existential
