@@ -27,9 +27,9 @@
     <title>Sacred Genesis</title>
     <script>
       if (sessionStorage.redirect) {
-        const redirectPath = sessionStorage.redirect;
+        const redirectUrl = new URL(sessionStorage.redirect);
         delete sessionStorage.redirect;
-        window.location.href = window.location.origin + redirectPath;
+        window.location.href = redirectUrl.pathname + redirectUrl.search;
       }
     </script>
   </head>
