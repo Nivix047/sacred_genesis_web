@@ -36,7 +36,7 @@ const Home = () => {
                   pixel-punches to the gut, each artfully crafted by the AI
                   brilliance of DALL-E 2 and disguised as "Prayers". Brace
                   yourself to confront your demons in this grunge-meets-pixel
-                  art odyssey. Relax, browse, and remember: in the cast expanse
+                  art odyssey. Relax, browse, and remember: in the vast expanse
                   of the digital void, we're all just intriguing glitches in
                   search of meaning. But hey, at least we have these awesome
                   NFTs, right?

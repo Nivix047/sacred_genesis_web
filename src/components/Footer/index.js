@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, Link as MuiLink } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
@@ -18,12 +18,19 @@ const Footer = () => {
               ©2024 Sacred Genesis
             </Typography>
             <Typography variant="body2" className="footer-link-item">
-              <Link
+              <MuiLink
+                component={Link}
                 to="/terms"
-                style={{ color: "inherit", textDecoration: "none" }}
+                color="inherit"
+                underline="none"
+                sx={{
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
+                }}
               >
                 Sacred Genesis Terms & Conditions
-              </Link>
+              </MuiLink>
             </Typography>
           </Box>
         </Grid>
