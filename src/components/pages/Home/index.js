@@ -31,9 +31,15 @@ const Home = () => {
                   variant="body1"
                   sx={{ px: { xs: 2, sm: 8 }, color: "white" }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua...
+                  Dear fellow travelers on the pixelated pilgrimage, welcome to
+                  Sacred Genesis. Here, we offer not just NFTs, but existential
+                  pixel-punches to the gut, each artfully crafted by the AI
+                  brilliance of DALL-E 2 and disguised as "Prayers". Brace
+                  yourself to confront your demons in this grunge-meets-pixel
+                  art odyssey. Relax, browse, and remember: in the cast expanse
+                  of the digital void, we're all just intriguing glitches in
+                  search of meaning. But hey, at least we have these awesome
+                  NFTs, right?
                 </Typography>
               </Box>
             </Grid>
