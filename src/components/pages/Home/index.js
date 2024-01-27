@@ -5,7 +5,11 @@ import "./Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
-  const openseaUrl = "https://opensea.io/Sacred-Genesis";
+  const WWACurl =
+    "https://opensea.io/collection/web-weaver-artistry-collection";
+
+  const POGCurl =
+    "https://opensea.io/collection/prayers-of-gratitude-collection";
 
   const handleContactClick = () => {
     navigate("/contact");
@@ -61,7 +65,7 @@ const Home = () => {
                 }}
               >
                 <a
-                  href={openseaUrl}
+                  href={WWACurl}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ textDecoration: "none" }}
@@ -72,6 +76,7 @@ const Home = () => {
                     className="styled-button"
                     id="purchase-nft-btn"
                     sx={{
+                      textTransform: "none",
                       background: "linear-gradient(180deg, #4a4a4a, #000000)",
                       padding: "15px 30px",
                       width: 200,
@@ -85,7 +90,36 @@ const Home = () => {
                       },
                     }}
                   >
-                    PURCHASE NFTS
+                    Web Weaver Artistry Collection
+                  </Button>
+                </a>
+                <a
+                  href={POGCurl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className="styled-button"
+                    id="purchase-nft-btn"
+                    sx={{
+                      textTransform: "none",
+                      background: "linear-gradient(180deg, #4a4a4a, #000000)",
+                      padding: "15px 30px",
+                      width: 200,
+                      borderColor: "white",
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      backgroundColor: "#5f5f5f", // Normal state background
+                      ":hover": {
+                        background: "linear-gradient(180deg, #5f5f5f, #0a0a0a)", // Darker gradient on hover
+                        borderColor: "white", // Keep the border color for the hover state if you want
+                      },
+                    }}
+                  >
+                    Prayers of Gratitude Collection
                   </Button>
                 </a>
                 <Button
@@ -93,6 +127,7 @@ const Home = () => {
                   color="primary"
                   onClick={handleContactClick}
                   sx={{
+                    textTransform: "none",
                     background: "linear-gradient(180deg, #4a4a4a, #000000)",
                     width: 200,
                     padding: "15px 30px",
@@ -106,7 +141,7 @@ const Home = () => {
                     },
                   }}
                 >
-                  CONTACT ME
+                  Contact Us
                 </Button>
               </Box>
             </Grid>
