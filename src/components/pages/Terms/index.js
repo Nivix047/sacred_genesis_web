@@ -15,27 +15,30 @@ const Terms = () => {
           Welcome to Sacred Genesis!
         </Typography>
         <Typography variant="body1" paragraph>
-          Sacred Genesis is a collection of digital artworks (NFTs) operating on
-          the Polygon blockchain network. By accessing our website and utilizing
-          our services, you agree to comply with and be bound by the following
-          terms and conditions.
+          Sacred Genesis is a collection of digital artworks and web art
+          prototypes (NFTs) operating on the Polygon and Ethereum blockchain
+          networks. By accessing our website and utilizing our services, you
+          agree to comply with and be bound by the following terms and
+          conditions. terms and conditions.
         </Typography>
         <Typography variant="h5" gutterBottom>
           1. Acceptance of Terms
         </Typography>
         <Typography variant="body1" paragraph>
           These terms apply to your access to and use of the Sacred Genesis
-          website and its associated services. By using our website, you agree
-          to these terms. If you do not agree, you should not use our services.
+          website and its associated services, including the acquisition and use
+          of digital artworks and web art prototypes. By using our website, you
+          agree to these terms. If you do not agree, you should not use our
+          services.
         </Typography>
         <Typography variant="h5" gutterBottom>
           2. NFT Transactions
         </Typography>
         <Typography variant="body1" paragraph>
           <strong>2.1 Blockchain Transactions:</strong> All NFT transactions are
-          conducted on the Polygon blockchain. Once a transaction is executed,
-          it cannot be reversed. We are not responsible for the undoing or
-          reversal of any transactions.
+          conducted on the Polygon and Ethereum blockchains. Once a transaction
+          is executed, it cannot be reversed. We are not responsible for the
+          undoing or reversal of any transactions.
         </Typography>
         <Typography variant="body1" paragraph>
           <strong>2.2 Third-Party Platforms:</strong> Sacred Genesis NFTs are
@@ -60,7 +63,7 @@ const Terms = () => {
         </Typography>
         <Typography variant="body1" paragraph>
           <strong>4.1 Ownership:</strong> Upon acquiring a Sacred Genesis NFT,
-          referred to as a "Prayer," you gain ownership of the digital artwork.
+          you gain ownership of the digital artwork.
         </Typography>
         <Typography variant="body1" paragraph>
           <strong>4.2 Personal and Commercial Use:</strong> As an owner, you are
