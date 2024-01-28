@@ -62,7 +62,7 @@ const Navbar = () => {
     <AppBar position="static" sx={{ backgroundColor: "black", color: "white" }}>
       <Toolbar>
         {/* Site title */}
-        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
           SACRED GENESIS
         </Typography>
 
@@ -143,6 +143,7 @@ const Navbar = () => {
                 to="/"
                 label="HOME"
                 style={{ color: "white" }}
+                sx={{ fontSize: "20px" }}
               />
               <Tab
                 component="a"
@@ -150,12 +151,14 @@ const Navbar = () => {
                 target="_blank"
                 label="PURCHASE NFTs"
                 style={{ color: "white" }}
+                sx={{ fontSize: "20px" }}
               />
               <Tab
                 component={Link}
                 to="/contact"
                 label="CONTACT"
                 style={{ color: "white" }}
+                sx={{ fontSize: "20px" }}
               />
               <Tab
                 icon={
@@ -165,7 +168,7 @@ const Navbar = () => {
                     rel="noopener noreferrer"
                     style={{ color: "white" }}
                   >
-                    <TwitterIcon />
+                    <TwitterIcon style={{ fontSize: "30px" }} />
                   </a>
                 }
                 style={{ color: "white" }}
