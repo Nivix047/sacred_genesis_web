@@ -75,6 +75,7 @@ const Home = () => {
                     className="styled-button"
                     id="purchase-nft-btn"
                     sx={{
+                      fontSize: "13px",
                       textTransform: "none",
                       background: "linear-gradient(180deg, #4a4a4a, #000000)",
                       padding: "15px 30px",
@@ -104,6 +105,7 @@ const Home = () => {
                     className="styled-button"
                     id="purchase-nft-btn"
                     sx={{
+                      fontSize: "13px",
                       textTransform: "none",
                       background: "linear-gradient(180deg, #4a4a4a, #000000)",
                       padding: "15px 30px",
@@ -126,6 +128,7 @@ const Home = () => {
                   color="primary"
                   onClick={handleContactClick}
                   sx={{
+                    fontSize: "13px",
                     textTransform: "none",
                     background: "linear-gradient(180deg, #4a4a4a, #000000)",
                     width: 200,

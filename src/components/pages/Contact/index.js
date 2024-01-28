@@ -100,7 +100,7 @@ const Contact = () => {
             <Typography
               variant="h1"
               gutterBottom
-              sx={{ textDecoration: "underline" }}
+              sx={{ borderBottom: "2px solid white", paddingBottom: "20px" }}
             >
               Got Questions?
             </Typography>
