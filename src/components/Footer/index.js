@@ -45,7 +45,7 @@ const Footer = () => {
         alignItems="center"
         direction="row" // Change to row direction
         justifyContent="flex-end" // Allign items to the right
-        sx={{ paddingRight: "7rem" }} // Padding to prevent content from touching the right edge
+        sx={{ paddingRight: { xs: "1rem", sm: "3rem", md: "7rem" } }} // Padding to prevent content from touching the right edge
       >
         {/* Logo Box Grid Item */}
         <Grid item>
