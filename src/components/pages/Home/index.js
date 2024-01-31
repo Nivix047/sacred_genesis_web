@@ -82,6 +82,10 @@ const Home = () => {
                     alignItems: "center",
                     margin: "auto",
                     borderRadius: "30px",
+                    transition: "transform 0.3s, border 0.3s",
+                    ":hover": {
+                      transform: "scale(1.1)",
+                    },
                   }}
                   onClick={() =>
                     navigateToURL(
@@ -117,6 +121,10 @@ const Home = () => {
                     alignItems: "center",
                     margin: "auto",
                     borderRadius: "30px",
+                    transition: "transform 0.3s, border 0.3s",
+                    ":hover": {
+                      transform: "scale(1.1)",
+                    },
                   }}
                   onClick={() =>
                     navigateToURL(
@@ -152,6 +160,10 @@ const Home = () => {
                     alignItems: "center",
                     margin: "auto",
                     borderRadius: "30px",
+                    transition: "transform 0.3s, border 0.3s",
+                    ":hover": {
+                      transform: "scale(1.1)",
+                    },
                   }}
                   onClick={handleContactClick}
                 >
