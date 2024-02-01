@@ -16,6 +16,28 @@ const Home = () => {
     navigate("/contact");
   };
 
+  // Media query styles for specific screen size (844x390)
+  const specialScreenSizeStyles = {
+    "@media screen and (max-width: 844px) and (max-height: 390px)": {
+      width: "20vw", // Adjust width for specific screen size
+      height: "20vw", // Adjust height for specific screen size
+    },
+  };
+
+  // Styles for the typography to maintain a consistent appearance
+  const typographyStyle = {
+    fontSize: "20px",
+    color: "white",
+    textAlign: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    padding: "10px 0", // Adjusted padding to maintain thin strip appearance
+    width: "100%", // Ensure the background spans the full width of the box
+    position: "absolute", // Position the typography absolutely within the box
+    top: "50%", // Vertically center
+    left: "50%", // Horizontally center
+    transform: "translate(-50%, -50%)", // Adjust for perfect centering
+  };
+
   return (
     <Box>
       {/* Background Image */}
@@ -86,6 +108,8 @@ const Home = () => {
                     ":hover": {
                       transform: "scale(1.1)",
                     },
+                    position: "relative",
+                    ...specialScreenSizeStyles,
                   }}
                   onClick={() =>
                     navigateToURL(
@@ -93,16 +117,7 @@ const Home = () => {
                     )
                   }
                 >
-                  <Typography
-                    variant="subtitle1"
-                    sx={{
-                      fontSize: "20px",
-                      color: "white",
-                      textAlign: "center",
-                      backgroundColor: "rgba(0, 0, 0, 0.5)",
-                      p: 1,
-                    }}
-                  >
+                  <Typography variant="subtitle1" sx={typographyStyle}>
                     Web Weaver Artistry Collection
                   </Typography>
                 </Box>
@@ -125,6 +140,8 @@ const Home = () => {
                     ":hover": {
                       transform: "scale(1.1)",
                     },
+                    position: "relative",
+                    ...specialScreenSizeStyles,
                   }}
                   onClick={() =>
                     navigateToURL(
@@ -132,16 +149,7 @@ const Home = () => {
                     )
                   }
                 >
-                  <Typography
-                    variant="subtitle1"
-                    sx={{
-                      fontSize: "20px",
-                      color: "white",
-                      textAlign: "center",
-                      backgroundColor: "rgba(0, 0, 0, 0.5)",
-                      p: 1,
-                    }}
-                  >
+                  <Typography variant="subtitle1" sx={typographyStyle}>
                     Prayers of Gratitude Collection
                   </Typography>
                 </Box>
@@ -164,19 +172,12 @@ const Home = () => {
                     ":hover": {
                       transform: "scale(1.1)",
                     },
+                    position: "relative",
+                    ...specialScreenSizeStyles,
                   }}
                   onClick={handleContactClick}
                 >
-                  <Typography
-                    variant="subtitle1"
-                    sx={{
-                      fontSize: "20px",
-                      color: "white",
-                      textAlign: "center",
-                      backgroundColor: "rgba(0, 0, 0, 0.5)",
-                      p: 1,
-                    }}
-                  >
+                  <Typography variant="subtitle1" sx={typographyStyle}>
                     Contact Us
                   </Typography>
                 </Box>
