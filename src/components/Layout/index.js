@@ -5,7 +5,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Contact from "../pages/Contact";
 import Terms from "../pages/Terms";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 const theme = createTheme({
   typography: {
